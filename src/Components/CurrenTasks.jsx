@@ -4,8 +4,6 @@ const CurrenTasks = () => {
   return (
     <div>
         <h1>Task management</h1>
-      
-        {/* current tasks */}
         <div className='tasks-column'>
           <h2>Curret tasks</h2>
           <table>
@@ -15,7 +13,7 @@ const CurrenTasks = () => {
                 <th>Tasks</th>
                 <th>Created at</th>
                 <th>Due Date</th>
-                <th>periority</th>
+                <th>piriority</th>
                 <th>Actions</th>
               </tr>
             </thead>
