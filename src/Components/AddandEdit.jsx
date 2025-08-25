@@ -12,7 +12,7 @@ const AddandEdit = () => {
             </div>
 
              <div className='priority' required>
-            <label>priority</label>
+            <label>priority:</label>
             <select>
                 <option value="Hight">Hight</option>
                 <option value="Medium">Medium</option>
@@ -20,12 +20,11 @@ const AddandEdit = () => {
 
             </select>
             </div>
-
-               <div className='form-group'>
+            <div className='form-group'>
             <label>Due Date:</label>
             <input type="date" required />
             </div>
-            <button type='submit'>Add Task </button>
+            <button type='submit'>Add Task</button>
         </form>
     </div>
     </>

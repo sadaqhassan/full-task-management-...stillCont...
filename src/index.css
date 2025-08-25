@@ -41,6 +41,7 @@ h1 {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 table {
@@ -83,6 +84,7 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  
 }
 
 button:hover {
@@ -91,6 +93,7 @@ button:hover {
 
 .btn-edit {
   background-color: #2196f3;
+  margin-right: 6px;
 }
 
 .btn-delete {
