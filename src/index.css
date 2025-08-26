@@ -93,11 +93,12 @@ button:hover {
 
 .btn-edit {
   background-color: #2196f3;
-  margin-right: 6px;
+  margin: 1.5px;
 }
 
 .btn-delete {
   background-color: #f44336;
+  margin: 1.5px;
 }
 .btn-clear-edit {
   background-color: #f44336;
@@ -131,8 +132,10 @@ button:hover {
   color: #28a745;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 780px ) {
   .main-content {
     grid-template-columns: 1fr;
   }
 }
+
+

@@ -1,6 +1,24 @@
-import React from 'react'
+import React,{ useEffect, useState} from 'react'
+import { MdDelete } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
+import moment from 'moment';
 
 const CurrenTasks = () => {
+     const [tasks ,setTasks]= useState([])
+
+    const fetchTasks = async()=>{
+       try{
+        const res =  await fetch('http://localhost:5000/tasks')
+        const Data =  await res.json()
+        setTasks(Data)
+       }catch(err){
+        console.log(err.message)
+       }
+    }
+    useEffect(()=>{
+        fetchTasks();
+    },[]);
+    console.log(tasks)
   return (
     <div className='tasks-column'>
           
@@ -17,44 +35,24 @@ const CurrenTasks = () => {
                 <th>Actions</th>
               </tr>
             </thead>
+             
             <tbody>
+            {tasks && tasks.filter((task)=>task.status!=="completedAt").map((task,index)=>(
               <tr>
                 <td><input type="checkbox" /></td>
-                <td>practice web</td>
-                <td>01-08-2025</td>
-                <td>05-08-2025</td>
-                <td>Low</td>
+                <td>{task.title}</td>
+                <td>{moment(task.createdAt).format('DD/MM/YY')}</td>
+                <td>{moment(task.dueDate).format('DD/MM/YY')}</td>
+                <td>{task.priority}</td>
                 <td>
-                  <button className='btn-edit'>Edit</button>
-                  <button className='btn-delete'>Delete</button>
+                  <button className='btn-edit'><FaEdit /></button>
+                  <button className='btn-delete'><MdDelete/></button>
                 </td>
-              </tr>
-
-                 <tr>
-                <td><input type="checkbox" /></td>
-                <td>practice web</td>
-                <td>01-08-2025</td>
-                <td>05-08-2025</td>
-                <td>Low</td>
-                <td>
-                  <button className='btn-edit'>Edit</button>
-                  <button className='btn-delete'>Delete</button>
-                </td>
-              </tr>
-
-
-                 <tr>
-                <td><input type="checkbox" /></td>
-                <td>practice web</td>
-                <td>01-08-2025</td>
-                <td>05-08-2025</td>
-                <td>Low</td>
-                <td>
-                  <button className='btn-edit'>Edit</button>
-                  <button className='btn-delete'>Delete</button>
-                </td>
-              </tr>
-            </tbody>
+                </tr>
+            ))}
+              
+              </tbody>
+            
           </table>
         </div>
 
