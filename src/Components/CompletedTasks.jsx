@@ -14,9 +14,10 @@ const CompletedTasks = () => {
             </tr>
         </thead>
         <tbody>
+            
             <tr>
                 <td><input type="checkbox" /></td>
-                <td>jwp authentcation</td>
+                <td></td>
                 <td>01-01-5</td>
                 <td className='priority-medium'>Medum</td>
                 <td></td>
